@@ -12,7 +12,7 @@ const Image = db.define(`image`, {
 });
 
 async function sync() {
-  await db.sync({ force: true });
+  await db.sync(); // { force: true }
   console.log(chalk.green(`db synced!`));
 }
 sync();

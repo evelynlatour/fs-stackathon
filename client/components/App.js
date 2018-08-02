@@ -8,17 +8,21 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      imageURL: ``,
+      imageUrl: ``,
     };
   }
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
-    console.log(this.state.imageURL);
+    console.log(this.state.imageUrl);
   };
 
-  handleSubmit = () => {
+  handleSubmit = async (event) => {
     // save url to database
+    event.preventDefault();
+    console.log(`handleSubmit function fired`);
+    console.log(this.state.imageUrl);
+    await axios.post(`api/images`, { imageUrl: this.state.imageUrl });
 
     // re-render component that is pulling images from the db
   }
@@ -27,14 +31,14 @@ export default class App extends Component {
     return (
       <div>
         <h1>Hello Test</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={event => this.handleSubmit(event)}>
           <input
             type="text"
-            name="imageURL"
+            name="imageUrl"
             onChange={this.handleChange}
-            value={this.state.imageURL}
+            value={this.state.imageUrl}
           />
-          <input type="button" name="button" value="Add Image" />
+          <button type="submit">Add Image</button>
         </form>
       </div>
     );
