@@ -1,0 +1,150 @@
+[
+  {
+    "id": "be8ceeda338b4f978e5fb3e95d9a7598",
+    "status": { "code": 10000, "description": "Ok" },
+    "created_at": "2018-08-02T15:32:00.423763144Z",
+    "model": {
+      "id": "e0be3b9d6a454f0493ac3a30784001ff",
+      "name": "apparel",
+      "created_at": "2016-12-20T22:43:29.831402Z",
+      "app_id": "main",
+      "output_info": { "type": "concept", "type_ext": "concept" },
+      "model_version": {
+        "id": "dc2cd6d9bff5425a80bfe0c4105583c1",
+        "created_at": "2016-12-20T22:43:29.831402Z",
+        "status": { "code": 21100, "description": "Model trained successfully" }
+      },
+      "display_name": "Apparel"
+    },
+    "input": {
+      "id": "e9f929a6925c4885a9bf8d85cdb4ffb6",
+      "data": {
+        "image": { "url": "https://samples.clarifai.com/apparel.jpeg" }
+      }
+    },
+    "data": {
+      "concepts": [
+        {
+          "id": "ai_hlBWBcP8",
+          "name": "Men's Boots",
+          "value": 0.90681356,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_Xfs5V5DH",
+          "name": "Women's Boots",
+          "value": 0.8484528,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_6nF00KsR",
+          "name": "Men's Dress Shoes",
+          "value": 0.52360034,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_SGXgBwzJ",
+          "name": "Sneakers",
+          "value": 0.42104876,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_Z79pShcW",
+          "name": "Oxfords",
+          "value": 0.33161128,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_z5F7XFlb",
+          "name": "Platform Shoes",
+          "value": 0.2707593,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_LLG9S3Fg",
+          "name": "Women's Sandals",
+          "value": 0.12298427,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_PpNXZGZl",
+          "name": "Loafers",
+          "value": 0.055687204,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_0PM9RnsJ",
+          "name": "Pumps",
+          "value": 0.039587572,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_F342tGZK",
+          "name": "Men's Sandals",
+          "value": 0.026250679,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_P2cKDGMW",
+          "name": "Clogs",
+          "value": 0.022161657,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_0tqh85Gt",
+          "name": "Boat Shoes",
+          "value": 0.016138121,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_Vd77t72x",
+          "name": "Dress",
+          "value": 0.0124643,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_jt5kSMNT",
+          "name": "Socks",
+          "value": 0.010492671,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_5Zj0kZRQ",
+          "name": "Belt",
+          "value": 0.0032143993,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_nVG9jntC",
+          "name": "Capris",
+          "value": 0.0031559088,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_mtd6x6QM",
+          "name": "Flats",
+          "value": 0.0030276743,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_FK40S8BP",
+          "name": "Swimwear",
+          "value": 0.0029082198,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_FjJsXq9G",
+          "name": "Women's Board Shorts",
+          "value": 0.002741987,
+          "app_id": "main"
+        },
+        {
+          "id": "ai_4NsJqZTB",
+          "name": "Ring",
+          "value": 0.0025220662,
+          "app_id": "main"
+        }
+      ]
+    }
+  }
+]
