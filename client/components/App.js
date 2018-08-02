@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   HashRouter, Route, Switch, Link,
 } from 'react-router-dom';
-
+import axios from 'axios';
 
 export default class App extends Component {
   constructor() {
