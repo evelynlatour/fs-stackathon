@@ -1,8 +1,8 @@
 [
   {
-    "id": "be8ceeda338b4f978e5fb3e95d9a7598",
+    "id": "bbc5b10fa4104d83bcca7b58ea006da9",
     "status": { "code": 10000, "description": "Ok" },
-    "created_at": "2018-08-02T15:32:00.423763144Z",
+    "created_at": "2018-08-02T21:56:54.892579933Z",
     "model": {
       "id": "e0be3b9d6a454f0493ac3a30784001ff",
       "name": "apparel",
@@ -17,7 +17,7 @@
       "display_name": "Apparel"
     },
     "input": {
-      "id": "e9f929a6925c4885a9bf8d85cdb4ffb6",
+      "id": "ddf6733e98a64bbc89ccd58a921c88a7",
       "data": {
         "image": { "url": "https://samples.clarifai.com/apparel.jpeg" }
       }
