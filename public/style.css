@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  text-align: center;
+}
+body {
+  padding: 5px;
+  margin: 25px;
+}
+
+div {
+}
+
+li {
+  /* font-size: 1.3rem;
+  padding: .2rem; */
+}
+
+h1 {
+  /* margin: 1rem; */
+}
+
+.links {
+  /* font-size: 1.1rem;
+  font-weight: bold; */
+}

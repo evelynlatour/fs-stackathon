@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../public/style.css';
 import App from './components/App';
+import Routes from './routes';
 
 ReactDOM.render(
-  <App />,
+  <Routes />,
   document.getElementById(`app`),
 );

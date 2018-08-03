@@ -19,14 +19,8 @@ export default class App extends Component {
   };
 
   handleSubmit = async (event) => {
-    // save url to database
     event.preventDefault();
-    // await axios.post(`api/images`, { imageUrl: this.state.imageUrl });
-    this.setState(prevState => ({ toggleItemView: !prevState.toggleItemView }));
-    console.log(`Posted ${this.state.imageUrl} to DB`);
-
-    // re-render component that is pulling images from the db so you can see what you added
-    // (and everything else you have? maybe those are separate displays
+    this.setState(prevState => ({ toggleItemView: true }));
   }
 
   render() {
@@ -34,14 +28,22 @@ export default class App extends Component {
       <div>
         <h1>Hello Test</h1>
         <form onSubmit={event => this.handleSubmit(event)}>
-          <input
-            style={{ width: `500px`, marginRight: `5px` }}
-            type="text"
-            name="imageUrl"
-            onChange={this.handleChange}
-            value={this.state.imageUrl}
-          />
-          <button type="submit">Add Image</button>
+          <div className="ui action input">
+            <input
+              style={{ width: `500px` }}
+              type="text"
+              name="imageUrl"
+              placeholder="Paste a URL here"
+              onChange={this.handleChange}
+              value={this.state.imageUrl}
+            />
+            <button
+              type="submit"
+              className="ui button"
+            >
+            Add Image
+            </button>
+          </div>
         </form>
         <ItemToAdd {...this.state} />
       </div>

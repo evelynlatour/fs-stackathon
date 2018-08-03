@@ -26,7 +26,6 @@ const Image = db.define(`image`, {
 async function sync() {
   await db.sync(); // { force: true } // might make sense to get/make a seed file
   console.log(chalk.magenta(`db synced!`));
-  db.close();
 }
 sync();
 

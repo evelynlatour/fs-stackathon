@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class App extends Component {
+export default class ItemToAdd extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      nickname: ``,
+    };
   }
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
-    console.log(this.state.imageUrl);
+    console.log(this.state.nickname);
   };
 
   handleSubmit = async (event) => {
-
+    await axios.post(`api/images`, { imageUrl: this.props.imageUrl, nickname: this.state.nickname });
   }
 
-  /* in render method, have img that is on state displayed, allow the addition
-of a nickname, and then a "go" button that will send it to clarifai, e.g. a put
-route that provides the URL to the clarifai function, gets back the data and then
-either manipulates it BEFORE it goes into the database, OR the model will have
-some type of getter method on it to sanitize the data as it comes in */
+
   render() {
     const { imageUrl, toggleItemView } = this.props;
     return (
@@ -31,9 +29,33 @@ some type of getter method on it to sanitize the data as it comes in */
             <h3>Item to add: </h3>
             <img
               alt=""
-              style={{ width: `30%`, margin: `1rem` }}
+              style={{ width: `30%`, margin: `.7rem` }}
               src={this.props.imageUrl}
             />
+            <form onSubmit={event => this.handleSubmit(event)}>
+              <p>
+                <label
+                  htmlFor="nickname"
+                  style={{ marginRight: `5px` }}
+                >
+                  Enter a name for this item:
+                </label>
+                <input
+                  style={{ width: `200px`, marginRight: `5px` }}
+                  type="text"
+                  name="nickname"
+                  onChange={this.handleChange}
+                  value={this.state.nickname}
+                />
+
+                <button
+                  type="submit"
+                  style={{ margin: `.1rem` }}
+                >
+              Add item to closet
+                </button>
+              </p>
+            </form>
           </div>
           )}
       </div>

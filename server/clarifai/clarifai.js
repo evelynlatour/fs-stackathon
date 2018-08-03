@@ -8,8 +8,7 @@ const app = new Clarifai.App({
 
 const apparelPredict = async (image) => {
   const response = await app.models.predict(`e0be3b9d6a454f0493ac3a30784001ff`, image); // { response } ??
-  const data = JSON.stringify(response.outputs[0].data.concepts);
-  console.log(data);
+  const data = response.outputs[0].data.concepts;
   return data;
 };
 
