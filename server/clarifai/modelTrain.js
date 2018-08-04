@@ -60,11 +60,11 @@ model_version_id = '835acab7b2514e9e993446e6a85e745e' */
 const apparelWorkflow = async (image) => {
   try {
     const response = await app.workflow.predict(`top-bottom`, image);
+    console.log(response);
     const allData = response.results[0].outputs;
-    const typeData = response.results[0].outputs[0].data.concepts;
-    const subtypeData = response.results[0].outputs[1].data.concepts;
-    const colorData = response.results[0].outputs[2].data.colors;
-    console.log(colorData);
+    // const typeData = response.results[0].outputs[0].data.concepts;
+    // const subtypeData = response.results[0].outputs[1].data.concepts;
+    // const colorData = response.results[0].outputs[2].data.colors;
     console.log(chalk.green(`apparelWorkflow executed & received image data from Clarafai`));
     return allData;
   } catch (err) {
@@ -72,6 +72,6 @@ const apparelWorkflow = async (image) => {
   }
 };
 
-apparelWorkflow(`https://images.footlocker.com/is/image/EBFL2/CY2341_a1_sc7?hei=500&wid=500`);
+// apparelWorkflow(`https://images.footlocker.com/is/image/EBFL2/CY2341_a1_sc7?hei=500&wid=500`);
 
 module.exports = apparelWorkflow;

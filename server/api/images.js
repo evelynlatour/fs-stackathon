@@ -1,6 +1,6 @@
 const router = require(`express`).Router();
 const { Image } = require(`../db`);
-const { app, apparelPredict } = require(`../clarifai/clarifai`);
+const apparelWorkflow = require(`../clarifai/modelTrain`);
 
 const chalk = require(`chalk`);
 
@@ -18,19 +18,35 @@ router.get(`/`, async (req, res, next) => {
 
 router.post(`/`, async (req, res, next) => {
   try {
-    const data = await apparelPredict(req.body.imageUrl);
-    console.log(chalk.magenta(JSON.stringify(data)));
+    const data = await apparelWorkflow(req.body.imageUrl);
+    const typeData = data[0].data.concepts;
+    const subtypeData = data[1].data.concepts;
+    const colorData = data[2].data.colors;
+
+    console.log(chalk.cyan(JSON.stringify((typeData))));
+    console.log(chalk.magenta(JSON.stringify((subtypeData))));
+    console.log(chalk.yellow(JSON.stringify((colorData))));
+
     const item = Image.build({
       nickname: req.body.nickname,
       imageUrl: req.body.imageUrl,
-      concept1: [data[0].name, `${data[0].value}`],
-      concept2: [data[1].name, `${data[1].value}`],
-      concept3: [data[2].name, `${data[2].value}`],
+      type: [typeData[0].name, `${typeData[0].value}`],
+      subtype1: [subtypeData[0].name, `${subtypeData[0].value}`],
+      subtype2: [subtypeData[1].name, `${subtypeData[1].value}`],
+      subtype3: [subtypeData[2].name, `${subtypeData[2].value}`],
     });
 
-    item.save();
+    colorData[0] ? item.color1 = [colorData[0].w3c.hex, colorData[0].w3c.name, `${colorData[0].value}`] : item.color1 = [];
+    colorData[1] ? item.color2 = [colorData[1].w3c.hex, colorData[1].w3c.name, `${colorData[1].value}`] : item.color2 = [];
+    colorData[2] ? item.color3 = [colorData[2].w3c.hex, colorData[2].w3c.name, `${colorData[2].value}`] : item.color3 = [];
 
-    console.log(chalk.green(`New item added to the database`));
+    // color1: [colorData[0].w3c.hex, colorData[0].w3c.name, `${colorData[0].value}`],
+    // color2: [colorData[1].w3c.hex, colorData[1].w3c.name, `${colorData[1].value}`],
+    // color3: [colorData[2].w3c.hex, colorData[2].w3c.name, `${colorData[2].value}`],
+
+    await item.save(); // didn't have an await here b4
+
+    console.log(chalk.green(`New item added to the database!`));
     res.status(201).json(item);
   } catch (err) {
     console.log(chalk.red(err));
