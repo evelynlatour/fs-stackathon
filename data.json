@@ -1,14 +1,66 @@
 [
   {
-    "id": "bbc5b10fa4104d83bcca7b58ea006da9",
+    "id": "952e80175d6646b187e0b206c8464c10",
     "status": { "code": 10000, "description": "Ok" },
-    "created_at": "2018-08-02T21:56:54.892579933Z",
+    "created_at": "2018-08-04T14:08:35.235584063Z",
+    "model": {
+      "id": "apparelCategories",
+      "name": "apparelCategories",
+      "created_at": "2018-08-03T20:58:27.894184Z",
+      "app_id": "91f50876bb4345d4a65c516e29cb334b",
+      "output_info": {
+        "output_config": {
+          "concepts_mutually_exclusive": true,
+          "closed_environment": false
+        },
+        "message": "Show output_info with: GET /models/{model_id}/output_info",
+        "type": "concept",
+        "type_ext": "concept"
+      },
+      "model_version": {
+        "id": "0748421b850d41768c04812aa5cce94d",
+        "created_at": "2018-08-03T23:10:40.160476Z",
+        "status": {
+          "code": 21100,
+          "description": "Model trained successfully"
+        },
+        "total_input_count": 23
+      }
+    },
+    "data": {
+      "concepts":
+RETURNED FROM TYPEDATA
+      [
+        {
+          "id": "top",
+          "name": "top",
+          "value": 0.97973365,
+          "app_id": "91f50876bb4345d4a65c516e29cb334b"
+        },
+        {
+          "id": "bottom",
+          "name": "bottom",
+          "value": 0.020266328,
+          "app_id": "91f50876bb4345d4a65c516e29cb334b"
+        }
+      ]
+
+    }
+  },
+  {
+    "id": "c6aaab659a7a49309e21a9d25e4928d1",
+    "status": { "code": 10000, "description": "Ok" },
+    "created_at": "2018-08-04T14:08:35.235771796Z",
     "model": {
       "id": "e0be3b9d6a454f0493ac3a30784001ff",
       "name": "apparel",
       "created_at": "2016-12-20T22:43:29.831402Z",
       "app_id": "main",
-      "output_info": { "type": "concept", "type_ext": "concept" },
+      "output_info": {
+        "message": "Show output_info with: GET /models/{model_id}/output_info",
+        "type": "concept",
+        "type_ext": "concept"
+      },
       "model_version": {
         "id": "dc2cd6d9bff5425a80bfe0c4105583c1",
         "created_at": "2016-12-20T22:43:29.831402Z",
@@ -16,135 +68,74 @@
       },
       "display_name": "Apparel"
     },
-    "input": {
-      "id": "ddf6733e98a64bbc89ccd58a921c88a7",
-      "data": {
-        "image": { "url": "https://samples.clarifai.com/apparel.jpeg" }
-      }
-    },
     "data": {
-      "concepts": [
+      "concepts":
+
+RETURNED FROM GENERAL DATA
+      [
         {
-          "id": "ai_hlBWBcP8",
-          "name": "Men's Boots",
-          "value": 0.90681356,
+          "id": "ai_sXlCZw4h",
+          "name": "Kimonos",
+          "value": 0.80737704,
           "app_id": "main"
         },
         {
-          "id": "ai_Xfs5V5DH",
-          "name": "Women's Boots",
-          "value": 0.8484528,
+          "id": "ai_fFlQDW0c",
+          "name": "Blouse",
+          "value": 0.5017622,
           "app_id": "main"
         },
         {
-          "id": "ai_6nF00KsR",
-          "name": "Men's Dress Shoes",
-          "value": 0.52360034,
+          "id": "ai_hN5FhfT7",
+          "name": "Cardigan",
+          "value": 0.4062159,
           "app_id": "main"
         },
         {
-          "id": "ai_SGXgBwzJ",
-          "name": "Sneakers",
-          "value": 0.42104876,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_Z79pShcW",
-          "name": "Oxfords",
-          "value": 0.33161128,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_z5F7XFlb",
-          "name": "Platform Shoes",
-          "value": 0.2707593,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_LLG9S3Fg",
-          "name": "Women's Sandals",
-          "value": 0.12298427,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_PpNXZGZl",
-          "name": "Loafers",
-          "value": 0.055687204,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_0PM9RnsJ",
-          "name": "Pumps",
-          "value": 0.039587572,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_F342tGZK",
-          "name": "Men's Sandals",
-          "value": 0.026250679,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_P2cKDGMW",
-          "name": "Clogs",
-          "value": 0.022161657,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_0tqh85Gt",
-          "name": "Boat Shoes",
-          "value": 0.016138121,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_Vd77t72x",
-          "name": "Dress",
-          "value": 0.0124643,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_jt5kSMNT",
-          "name": "Socks",
-          "value": 0.010492671,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_5Zj0kZRQ",
-          "name": "Belt",
-          "value": 0.0032143993,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_nVG9jntC",
-          "name": "Capris",
-          "value": 0.0031559088,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_mtd6x6QM",
-          "name": "Flats",
-          "value": 0.0030276743,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_FK40S8BP",
-          "name": "Swimwear",
-          "value": 0.0029082198,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_FjJsXq9G",
-          "name": "Women's Board Shorts",
-          "value": 0.002741987,
-          "app_id": "main"
-        },
-        {
-          "id": "ai_4NsJqZTB",
-          "name": "Ring",
-          "value": 0.0025220662,
+          "id": "ai_XRv88L24",
+          "name": "Tunic",
+          "value": 0.3088262,
           "app_id": "main"
         }
       ]
+
+
+    }
+  },
+  {
+    "id": "99d09646765146e1b7bd2b2b0523432c",
+    "status": { "code": 10000, "description": "Ok" },
+    "created_at": "2018-08-04T14:08:35.235778941Z",
+    "model": {
+      "id": "eeed0b6733a644cea07cf4c60f87ebb7",
+      "name": "color",
+      "created_at": "2016-05-11T18:05:45.924367Z",
+      "app_id": "main",
+      "output_info": {
+        "message": "Show output_info with: GET /models/{model_id}/output_info",
+        "type": "color",
+        "type_ext": "color"
+      },
+      "model_version": {
+        "id": "dd9458324b4b45c2be1a7ba84d27cd04",
+        "created_at": "2016-07-13T01:19:12.147644Z",
+        "status": { "code": 21100, "description": "Model trained successfully" }
+      },
+      "display_name": "Color"
+    },
+    "data": {
+      "colors":
+
+  RETURNED FROM COLOR DATA
+      [
+        {
+          "raw_hex": "#d7d4cf",
+          "w3c": { "hex": "#d3d3d3", "name": "LightGray" },
+          "value": 1
+        }
+      ]
+
+      
     }
   }
 ]

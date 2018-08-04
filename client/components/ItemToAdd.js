@@ -26,35 +26,29 @@ export default class ItemToAdd extends Component {
         {toggleItemView
           && (
           <div>
-            <h3>Item to add: </h3>
+            <h3 style={{ marginTop: `2rem` }}>Item to add: </h3>
             <img
               alt=""
-              style={{ width: `30%`, margin: `.7rem` }}
+              style={{ width: `30%`, marginBottom: `2rem` }}
               src={this.props.imageUrl}
             />
             <form onSubmit={event => this.handleSubmit(event)}>
-              <p>
-                <label
-                  htmlFor="nickname"
-                  style={{ marginRight: `5px` }}
-                >
-                  Enter a name for this item:
-                </label>
+              <div className="ui action input">
                 <input
-                  style={{ width: `200px`, marginRight: `5px` }}
+                  style={{ width: `300px` }}
                   type="text"
                   name="nickname"
+                  placeholder="Enter a nickname for this item..."
                   onChange={this.handleChange}
                   value={this.state.nickname}
                 />
-
                 <button
                   type="submit"
-                  style={{ margin: `.1rem` }}
+                  className="ui button"
                 >
               Add item to closet
                 </button>
-              </p>
+              </div>
             </form>
           </div>
           )}

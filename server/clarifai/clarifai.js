@@ -8,6 +8,8 @@ const app = new Clarifai.App({
 
 const apparelPredict = async (image) => {
   const response = await app.models.predict(`e0be3b9d6a454f0493ac3a30784001ff`, image); // { response } ??
+  console.log(JSON.stringify(response.outputs));
+  await fs.writeFileSync(`../../data.json`, JSON.stringify(response), `utf8`);
   const data = response.outputs[0].data.concepts;
   return data;
 };

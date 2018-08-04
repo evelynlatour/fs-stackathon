@@ -4,7 +4,7 @@ const volleyball = require(`volleyball`);
 const bodyParser = require(`body-parser`);
 const webpack = require(`webpack`);
 const webpackDevMiddleware = require(`webpack-dev-middleware`);
-const db = require(`./db`);
+const { db } = require(`./db`);
 const chalk = require(`chalk`);
 
 
@@ -32,21 +32,20 @@ app.get(`*`, (req, res) => {
   res.sendFile(path.join(__dirname, `../public/index.html`));
 });
 
-app.listen(3000, () => {
-  console.log(chalk.blue(`~ ~ ~ Listening on port 3000 ~ ~ ~`));
-});
+// app.listen(3000, () => {
+//   console.log(chalk.blue(`~ ~ ~ Listening on port 3000 ~ ~ ~`));
+// });
 
+const startApp = async () => {
+  try {
+    await db.sync({ force: true });
+    console.log(chalk.green(`db synced!`));
+    app.listen(3000, () => {
+      console.log(`Server listening on port ${3000}`);
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
 
-// const startApp = async () => {
-//   try {
-//     await db.sync({ force: true });
-//     console.log(chalk.green(`db synced!`));
-//     app.listen(3000, () => {
-//       console.log(`Server listening on port ${3000}`);
-//     });
-//   } catch (err) {
-//     console.error(err);
-//   }
-// };
-//
-// startApp();
+startApp();
