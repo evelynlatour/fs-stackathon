@@ -81,17 +81,21 @@ export default class GenerateOutfit extends Component {
 
     return (
       <div style={{ marginBottom: `3rem` }}>
-        <h2 style={{ marginBottom: `1.5rem` }}>Generate An Outfit</h2>
+        <h2
+          style={{ marginBottom: `1.5rem`, marginTop: `2rem` }}
+          className="grey ui header"
+        >Generate An Outfit
+        </h2>
         <div>
           <button
             type="button"
-            className="ui pink button"
+            className="ui yellow button"
             style={{ marginBottom: `1.5rem` }}
             onClick={() => this.clickHandler(randomTop, randomBottom)}
           >{generatedTop.id ? `Refresh` : `Go`}
           </button>
 
-          <div className="ui middle aligned centered grid">
+          <div className="ui center middle aligned centered grid">
             {generatedTop.id
               && (
               <RandomTop
@@ -102,8 +106,10 @@ export default class GenerateOutfit extends Component {
               )}
             {generatedBottom.id
             && (
-            <div className="one wide column" style={{ textAlign: `center` }}>
-              <i className="grey huge plus icon" />
+            <div className="one wide centered column">
+              <div className="centered column">
+                <i className="grey huge plus icon" />
+              </div>
             </div>
             )}
             {generatedBottom.id

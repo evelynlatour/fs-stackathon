@@ -27,7 +27,7 @@ export default class ItemToAdd extends Component {
         {toggleItemView
           && (
           <div>
-            <h3 style={{ marginTop: `2rem` }}>Item to add: </h3>
+            <h3 className="yellow ui header" style={{ marginTop: `2.5rem`, marginBottom: `1.5rem` }}>Item to add: </h3>
             <img
               alt=""
               style={{ width: `30%`, marginBottom: `2rem` }}

@@ -30,13 +30,20 @@ export default class ViewAll extends Component {
         <div style={{ textAlign: `left` }}>
           <button
             type="button"
-            className="ui tiny teal button"
+            className="ui purple button"
             onClick={() => this.props.history.push(`/`)}
           > Add Another Item
           </button>
         </div>
 
-        <h1 style={{ marginBottom: `2rem` }}>Closet</h1>
+        <h1
+          style={{ marginBottom: `2rem`, marginTop: `.01rem`, fontSize: `4rem` }}
+          className="grey ui header"
+        >Closet
+        </h1>
+        <div
+          className="ui divider"
+        />
         <GenerateOutfit tops={tops} bottoms={bottoms} />
         <div
           className="ui divider"

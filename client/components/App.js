@@ -29,12 +29,16 @@ export default class App extends Component {
         <div style={{ textAlign: `left` }}>
           <button
             type="button"
-            className="ui tiny pink button"
+            className="ui yellow button"
             onClick={() => this.props.history.push(`/closet`)}
           > View Closet
           </button>
         </div>
-        <h1>Add an item to your closet</h1>
+        <h1
+          className="grey ui header"
+          style={{ marginBottom: `2rem`, marginTop: `3rem`, fontSize: `2.5rem` }}
+        >Add an item to your closet
+        </h1>
         <form onSubmit={event => this.handleSubmit(event)}>
           <div className="ui action input">
             <input

@@ -20,20 +20,29 @@ const RandomBottom = ({
           alt=""
           style={{ width: `90%`, margin: `.7rem` }}
         />
+        <div
+          className="ui label"
+          style={{ margin: `.5rem` }}
+        >
+          {generatedBottom.nickname.toUpperCase()}
+        </div>
       </div>
       <div className="column" style={{ textAlign: `left` }}>
-        <p>Only show me...</p>
-        {bottomFilterData.map(({ name, displayText }) => (
-          <div key={name} className="ui checkbox" style={{ display: `block`, margin: `.5rem` }}>
-            <input
-              type="checkbox"
-              name={name}
-              checked={bottomFilters.includes(name)}
-              onChange={handleFilter}
-            />
-            <label style={{ textAlign: `left` }}>{displayText}</label>
-          </div>
-        ))}
+        <div className={keepBottom ? `ui left aligned disabled segment` : `ui left aligned segment`}>
+          <p>Only show me...</p>
+          {bottomFilterData.map(({ name, displayText }) => (
+            <div key={name} className="ui checkbox" style={{ display: `block`, margin: `.5rem` }}>
+              <input
+                type="checkbox"
+                disabled={keepBottom ? `disabled` : ``}
+                name={name}
+                checked={bottomFilters.includes(name)}
+                onChange={handleFilter}
+              />
+              <label style={{ textAlign: `left` }}>{displayText}</label>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </div>
