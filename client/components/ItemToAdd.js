@@ -14,7 +14,9 @@ export default class ItemToAdd extends Component {
   };
 
   handleSubmit = async (event) => {
+    event.preventDefault();
     await axios.post(`api/images`, { imageUrl: this.props.imageUrl, nickname: this.state.nickname });
+    this.props.history.push(`/submitted`);
   }
 
 

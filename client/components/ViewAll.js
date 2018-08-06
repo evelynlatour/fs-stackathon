@@ -27,7 +27,16 @@ export default class ViewAll extends Component {
 
     return (
       <Fragment>
-        <h1 style={{ marginBottom: `2rem` }}>Viewing All Closet Items</h1>
+        <div style={{ textAlign: `left` }}>
+          <button
+            type="button"
+            className="ui tiny teal button"
+            onClick={() => this.props.history.push(`/`)}
+          > Add Another Item
+          </button>
+        </div>
+
+        <h1 style={{ marginBottom: `2rem` }}>Closet</h1>
         <GenerateOutfit tops={tops} bottoms={bottoms} />
         <div
           className="ui divider"

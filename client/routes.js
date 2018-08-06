@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import App from './components/App';
 import ViewAll from './components/ViewAll';
+import Submitted from './components/Submitted';
 
 
 export default class Routes extends Component {
@@ -13,6 +14,7 @@ export default class Routes extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={App} />
+          <Route exact path="/submitted" component={Submitted} />
           <Route exact path="/closet" component={ViewAll} />
         </Switch>
       </BrowserRouter>

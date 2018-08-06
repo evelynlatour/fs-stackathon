@@ -26,7 +26,15 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>Hello Test</h1>
+        <div style={{ textAlign: `left` }}>
+          <button
+            type="button"
+            className="ui tiny pink button"
+            onClick={() => this.props.history.push(`/closet`)}
+          > View Closet
+          </button>
+        </div>
+        <h1>Add an item to your closet</h1>
         <form onSubmit={event => this.handleSubmit(event)}>
           <div className="ui action input">
             <input
@@ -45,7 +53,7 @@ export default class App extends Component {
             </button>
           </div>
         </form>
-        <ItemToAdd {...this.state} />
+        <ItemToAdd {...this.state} history={this.props.history} />
       </div>
     );
   }
