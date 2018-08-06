@@ -52,31 +52,31 @@ export default class GenerateOutfit extends Component {
     });
   }
 
+  handleFilterTop = ({ target: { name } }) => {
+    this.setState((previousState) => {
+      let topFilters = [...previousState.topFilters];
+      if (topFilters.includes(name)) {
+        topFilters = topFilters.filter(item => item !== name);
+      } else {
+        topFilters.push(name);
+      }
+      return { topFilters };
+    });
+  }
+
   render() {
     const { tops, bottoms } = this.props;
     const { bottomFilters, topFilters } = this.state;
 
     // filter tops & bottoms depending on checkboxes
-
     const filteredTops = filterItemsByFilters(topFilters, tops);
     const filteredBottoms = filterItemsByFilters(bottomFilters, bottoms);
-
-    console.log(tops);
-    console.log(`All tops ^^`);
-    console.log(filteredTops);
-    console.log(`Filtered tops ^^`);
-    console.log(`##################################`);
-    console.log(bottoms);
-    console.log(`All bottoms ^^`);
-    console.log(filteredBottoms);
-    console.log(`Filtered bottoms ^^`);
-    console.log(`!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`);
 
     const {
       generatedTop, generatedBottom, keepTop, keepBottom,
     } = this.state;
 
-    const randomTop = tops[getRandom(0, tops.length - 1)];
+    const randomTop = filteredTops[getRandom(0, filteredTops.length - 1)];
     const randomBottom = filteredBottoms[getRandom(0, filteredBottoms.length - 1)];
 
     return (
@@ -88,18 +88,32 @@ export default class GenerateOutfit extends Component {
             className="ui pink button"
             style={{ marginBottom: `1.5rem` }}
             onClick={() => this.clickHandler(randomTop, randomBottom)}
-          >{generatedTop.nickname ? `Go Again` : `Go`}
+          >{generatedTop.id ? `Refresh` : `Go`}
           </button>
 
           <div className="ui middle aligned centered grid">
-            {generatedTop.nickname && <RandomTop {...this.state} handleTop={this.handleTop} />}
-            {generatedBottom.nickname
+            {generatedTop.id
+              && (
+              <RandomTop
+                {...this.state}
+                handleTop={this.handleTop}
+                handleFilterTop={this.handleFilterTop}
+              />
+              )}
+            {generatedBottom.id
             && (
             <div className="one wide column" style={{ textAlign: `center` }}>
               <i className="grey huge plus icon" />
             </div>
             )}
-            {generatedBottom.nickname && <RandomBottom {...this.state} handleBottom={this.handleBottom} handleFilter={this.handleFilter} />}
+            {generatedBottom.id
+              && (
+              <RandomBottom
+                {...this.state}
+                handleBottom={this.handleBottom}
+                handleFilter={this.handleFilter}
+              />
+              )}
           </div>
         </div>
       </div>
